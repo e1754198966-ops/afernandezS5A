@@ -1,7 +1,5 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace afernandezS5A.Models
 {
@@ -12,7 +10,6 @@ namespace afernandezS5A.Models
         public int Id { get; set; }
 
         [MaxLength(25)]
-        public string Name { get; set; }
-
+        public string? Name { get; set; } 
     }
 }

@@ -46,4 +46,24 @@ public partial class vPersona : ContentPage
             btnMostar_Clicked(sender, e);
         }
     }
+
+    private void btnActualizar_Clicked(object sender, EventArgs e)
+    {
+        lblStatusMessage.Text = "";
+
+        if (sender is Button button && button.CommandParameter is int idPersona)
+        {
+            // Tomamos el texto del Entry actual como el nuevo nombre
+            string nuevoNombre = txtName.Text;
+
+            // Llamamos al método de actualizar del repositorio
+            App._personRepo.UpdatePerson(idPersona, nuevoNombre);
+
+            lblStatusMessage.Text = App._personRepo.StatusMessage;
+
+            // Refrescamos la lista y limpiamos la caja de texto
+            btnMostar_Clicked(sender, e);
+            txtName.Text = "";
+        }
+    }
 }

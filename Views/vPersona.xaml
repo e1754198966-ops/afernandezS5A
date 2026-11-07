@@ -60,6 +60,7 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
                             <Label Text="{Binding Id}"
@@ -76,6 +77,13 @@
                                     BackgroundColor="Red"
                                     TextColor="White"
                                     Grid.Column="2" />
+
+                            <Button Text="Actualizar"
+                                    Clicked="btnActualizar_Clicked"
+                                    CommandParameter="{Binding Id}"
+                                    BackgroundColor="Orange"
+                                    TextColor="White"
+                                    Grid.Column="3" />
                         </Grid>
 
                     </DataTemplate>
